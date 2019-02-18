@@ -1,21 +1,16 @@
-<h1>Héroes <small>Marvel & DC</small></h1>
+<h1 class="text-center">Héroes <small>Marvel & DC</small></h1>
+
 <div class="row d-flex justify-content-around">
-  <div class="card mb-3 col-md-5 mr-2" 
-        style="max-width: 540px;"
-        *ngFor="let hero of data">
-    <div class="row no-gutters">
-      <div class="col-md-4 container-img">
-        <img src="{{hero.img}}" class="card-img" alt="{{hero.nombre}}" title="{{hero.nombre}}">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{hero.nombre}}</h5>
-          <p class="card-text">{{hero.bio}}</p>
-          <p class="card-text"><small class="text-muted">{{hero.aparicion}}</small></p>
-          <button class="btn btn-outline-primary btn-block">Ver más...</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <app-heroe-tarjeta *ngFor="let hero of data; 
+                             let i = index" 
+                      [heroe]="hero"
+                      [index]="i"
+                      (heroeSeleccionado)="ver_heroe($event)">
+  </app-heroe-tarjeta>
+
+  <!-- <div style="border:1px solid red;" *ngFor="let hero of data">
+    {{ hero | json}}
+  </div> -->
 
 </div>

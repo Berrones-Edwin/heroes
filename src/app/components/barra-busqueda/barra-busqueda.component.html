@@ -1,0 +1,22 @@
+<h1 class="text-center">Héroes <small>Marvel & DC</small></h1>
+<div *ngIf="heroes.length>0" class="row d-flex justify-content-around">
+
+
+  <app-heroe-tarjeta *ngFor="let hero of heroes; 
+                             let i = index" 
+                      [heroe]="hero"
+                      [index]="hero.idx"
+                      (heroeSeleccionado)="ver_heroe($event)">
+  </app-heroe-tarjeta>
+
+  
+</div>
+<div *ngIf="heroes.length===0" 
+      class="jumbotron jumbotron-fluid animated fadeIn fast">
+
+  <div class="container">
+    <h1 class=" text-center display-4">Upss...</h1>
+    <p class=" text-center lead">Ese superheroe no se encuentra disponible</p>
+  </div>
+
+</div>

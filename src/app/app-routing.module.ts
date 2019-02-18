@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// Componentes
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
-
-// Componentes
+import { HeroeComponent } from './components/heroe/heroe.component';
+import { BarraBusquedaComponent } from './components/barra-busqueda/barra-busqueda.component';
 
 
 const routes: Routes = [
-  {path:'home',component:HomeComponent},
-  {path: 'about', component:AboutComponent},
-  {path:'heroes',component:HeroesComponent},
-  //Si pone una ruta incorrecta lo redirigmos al home
-  { path:'**', redirectTo:'home' }
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'heroes', component: HeroesComponent },
+  { path: 'heroes/:nombre', component: BarraBusquedaComponent },
+  { path: 'heroe/:id', component: HeroeComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

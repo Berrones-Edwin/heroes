@@ -1,0 +1,23 @@
+<div class="row d-flex justify-content-center  align-items-center">
+  <div class="col-md-4">
+    <img style="margin-bottom:.5rem;" [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+    <button class="btn btn-outline-secondary btn-block"
+            (click)="regresar()">
+      Regresar
+    </button>
+  </div>
+  <div class="col-md-8">
+    <h1 class="display-4 text-center">
+      {{ heroe.nombre | uppercase }}
+      <img style="max-width: 50px;" 
+      src="https://cdn2.iconfinder.com/data/icons/rounded_square_icons__books_by_deleket-dexzmr/320/Marvel.png"
+      *ngIf="heroe.casa==='Marvel'">
+      <img style="max-width: 50px;" 
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/DC_Comics_logo.png/600px-DC_Comics_logo.png"
+      *ngIf="heroe.casa==='DC'">
+    </h1>
+    <p class="card-text">{{ heroe.bio }}</p>
+    <p class="text-center">Primera Aparación <b>{{ heroe.aparicion | date:'y' }}</b></p>
+   
+  </div>
+</div>
