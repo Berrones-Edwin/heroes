@@ -14,12 +14,12 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroes/:nombre', component: BarraBusquedaComponent },
-  { path: 'heroe/:id', component: HeroeComponent },
+  { path: 'heroe/:id', component: HeroeComponent  },
   { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

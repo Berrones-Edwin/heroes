@@ -13,6 +13,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BarraBusquedaComponent } from './components/barra-busqueda/barra-busqueda.component';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
